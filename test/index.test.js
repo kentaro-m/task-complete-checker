@@ -1,3 +1,5 @@
+/* global describe, beforeEach, test, expect */
+
 const nock = require('nock')
 // Requiring our app implementation
 const myProbotApp = require('..')
