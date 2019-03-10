@@ -16,7 +16,7 @@
     "dev": "nodemon",
     "start": "probot run ./index.js",
     "lint": "eslint . --fix",
-    "test": "jest",
+    "test": "jest --coverage",
     "test:watch": "jest --watch --notify --notifyMode=change --coverage"
   },
   "dependencies": {

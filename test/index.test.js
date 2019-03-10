@@ -1,47 +1,34 @@
 /* global describe, beforeEach, test, expect */
 
 const nock = require('nock')
-// Requiring our app implementation
-const myProbotApp = require('..')
+const taskCompleteChecker = require('..')
+const TaskStatus = require('../lib/task_status')
 const { Probot } = require('probot')
-// Requiring our fixtures
-const checkSuitePayload = require('./fixtures/check_suite.requested')
-const checkRunSuccess = require('./fixtures/check_run.created')
+const prOpenedPayload = require('./fixtures/pull_request.opened.success')
 
 nock.disableNetConnect()
 
-describe('My Probot app', () => {
-  let probot
+describe('app', () => {
+  test.only('runs the app if sends the pull request event', async () => {
+    const checkSpy = jest.spyOn(TaskStatus, 'check')
 
-  beforeEach(() => {
-    probot = new Probot({})
-    // Load our app into probot
-    const app = probot.load(myProbotApp)
-
-    // just return a test token
+    const probot = new Probot({})
+    const app = probot.load(taskCompleteChecker)
     app.app = () => 'test'
-  })
 
-  test('creates a passing check', async () => {
     nock('https://api.github.com')
-      .post('/app/installations/2/access_tokens')
+      .post('/app/installations/735996/access_tokens')
       .reply(200, { token: 'test' })
 
     nock('https://api.github.com')
-      .post('/repos/hiimbex/testing-things/check-runs', (body) => {
-        body.completed_at = '2018-10-05T17:35:53.683Z'
-        expect(body).toMatchObject(checkRunSuccess)
+      .post('/repos/kentaro-m/task-complete-checker-test/check-runs', (body) => {
+        body.completed_at = '2018-07-14T18:18:54.156Z'
         return true
       })
       .reply(200)
 
-    // Receive a webhook event
-    await probot.receive({ name: 'check_suite', payload: checkSuitePayload })
+    await probot.receive({ name: 'pull_request', payload: prOpenedPayload })
+
+    expect(checkSpy).toBeCalled()
   })
 })
-
-// For more information about testing with Jest see:
-// https://facebook.github.io/jest/
-
-// For more information about testing with Nock see:
-// https://github.com/nock/nock
