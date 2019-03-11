@@ -5,7 +5,7 @@
 ## Usage
 ![](./assets/demo.gif)
 
-1. Install the app with your repository
+1. Install [the app](https://github.com/apps/task-complete-checker) with your repository
 2. Create the pull request contained a checklist at a description field
 3. Change to the success status if all the checklists are checked 
 
