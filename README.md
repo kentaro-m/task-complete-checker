@@ -1,8 +1,15 @@
 # Task Complete Checker
 
-> A GitHub App built with [Probot](https://github.com/probot/probot) that Checks if all tasks are completed in the pull requests.
+> A GitHub App built with [Probot](https://github.com/probot/probot) that checks if all tasks are completed in the pull requests.
 
-## Setup
+## Usage
+![](./assets/demo.gif)
+
+1. Install the app with your repository
+2. Create the pull request contained a checklist at a description field
+3. Change to the success status if all the checklists are checked 
+
+## Development
 
 ```sh
 # Install dependencies
@@ -14,6 +21,7 @@ npm start
 
 ## Deploy
 
+### Now
 ```bash
 $ npm install -g now
 $ now secrets add tcc-app-id "<APP_ID>"
