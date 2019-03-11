@@ -23,6 +23,7 @@ npm start
 
 ### Now
 ```bash
+# Deploy the app to Now
 $ npm install -g now
 $ now secrets add tcc-app-id "<APP_ID>"
 $ now secrets add tcc-webhook-secret "<WEBHOOK_SECRET>"
