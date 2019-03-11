@@ -12,6 +12,17 @@ npm install
 npm start
 ```
 
+## Deploy
+
+```bash
+$ npm install -g now
+$ now secrets add tcc-app-id "<APP_ID>"
+$ now secrets add tcc-webhook-secret "<WEBHOOK_SECRET>"
+$ now secrets add tcc-private-key "$(cat app.private-key.pem | base64)"
+$ now
+$ now alias https://task-complete-checker-hogefuga.now.sh task-complete-checker
+```
+
 ## Contributing
 
 If you have suggestions for how task-complete-checker could be improved, or want to report a bug, open an issue! We'd love all and any contributions.
