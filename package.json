@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Checks if all tasks are completed in the pull requests.",
   "author": "Kentaro Matsushita <kentaro.m811@gmail.com> (https://github.com/kentaro-m/task-complete-checker)",
-  "license": "ISC",
+  "license": "MIT",
   "repository": "https://github.com//task-complete-checker.git",
   "homepage": "https://github.com//task-complete-checker",
   "bugs": "https://github.com//task-complete-checker/issues",

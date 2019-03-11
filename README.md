@@ -39,5 +39,4 @@ If you have suggestions for how task-complete-checker could be improved, or want
 For more, check out the [Contributing Guide](CONTRIBUTING.md).
 
 ## :memo: License
-
-[ISC](LICENSE) © 2019 Kentaro Matsushita <kentaro.m811@gmail.com> (https://github.com/kentaro-m/task-complete-checker)
+MIT
