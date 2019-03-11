@@ -28,7 +28,7 @@ $ now secrets add tcc-app-id "<APP_ID>"
 $ now secrets add tcc-webhook-secret "<WEBHOOK_SECRET>"
 $ now secrets add tcc-private-key "$(cat app.private-key.pem | base64)"
 $ now
-$ now alias https://task-complete-checker-hogefuga.now.sh task-complete-checker
+$ now alias https://task-complete-checker-hogefuga.now.sh <alias-name>
 ```
 
 ## Contributing
