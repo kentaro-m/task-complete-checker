@@ -1,4 +1,4 @@
-/* global describe, beforeEach, test, expect */
+/* global describe, jest, test, expect */
 
 const nock = require('nock')
 const taskCompleteChecker = require('..')
