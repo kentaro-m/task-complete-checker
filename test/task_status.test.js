@@ -1,3 +1,5 @@
+/* global describe, test, expect, jest */
+
 const { Context } = require('probot')
 const TaskStatus = require('../lib/task_status')
 const prOpenedFailurePayload = require('./fixtures/pull_request.opened.failure')
